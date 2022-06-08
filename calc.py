@@ -3,7 +3,6 @@ from re import sub
 
 os.system('cls')
 
-
 def soma (a,b):
     res = a+b
     return res
@@ -24,10 +23,34 @@ b=3
 c=2
 d=1
 
-print(soma(a,b))
+entrada1 = ''
+while 1:
+    
+    print('Siga as instruções ou digite "sair" para sair.')
+    print('-----------------------------------------------------------')    
+    entrada1 = input('digite o primeiro operador: ')
+    if entrada1 =="sair":
+        break
 
-print(subtracao(c,d))
+    op = input("digite qual operação vc quer realizar (+,-,* ou /): ")
+    if op =="sair":
+        break
 
-print(multi(a,d))
+    entrada2 = input('digite o segundo operador: ')
+    if entrada2 =="sair":
+        break
 
-print(div(b,c))
+    print('-----------------------------------------------------------')
+    if op =='+':
+        print(soma(int(entrada1),int(entrada2)))
+    elif op == '-':
+        print(subtracao(int(entrada1),int(entrada2)))
+    elif op == '*':
+        print(multi(int(entrada1),int(entrada2)))
+    elif op == '/':
+        if int(entrada2) != 0:
+            print(div(int(entrada1),int(entrada2)))
+        else:
+            print("impossível Dividir por zero")
+    else:
+        print('Operador inválido')
